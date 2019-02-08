@@ -80,6 +80,11 @@ GEM
     parallel (1.13.0)
     public_suffix (3.0.3)
     rack (2.0.6)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     rake (12.3.2)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -103,6 +108,7 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
+  rails_12factor
   tzinfo-data
   wdm (~> 0.1)
 
