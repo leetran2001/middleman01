@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json.schemastore.org/install",
+  "options": {
+    "properties": {
+      "title": {
+        "title": "Title",
+        "type": "string",
+        "default": "App title"
+      },
+      "text": {
+        "title": "Text",
+        "type": "string",
+        "format": "textarea",
+        "default": "The mission of Cloudflare is to bring the high quality apps and libraries being developed all around the world to every website owner on the internet, no matter how small."
+      },
+      "richtext": {
+        "title": "Rich Text",
+        "type": "string",
+        "format": "richtext",
+        "default": "<h1>I’d just like to interject for a moment.</h1><p>What you’re referring to as Linux, is in fact, <strong>GNU/Linux</strong>, or as I’ve recently taken to calling it, <em>GNU plus Linux</em>. Linux is not an operating system unto itself, but rather another free component of a fully functioning <em>GNU system</em> made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX.</p>Many computer users run a modified version of the GNU system every day, without realizing it. Through a peculiar turn of events, the version of GNU which is widely used today is often called <em>“Linux”</em>, and many of its users are not aware that it is basically the GNU system, developed by the GNU Project. <strong>There really is a Linux</strong>, and these people are using it, but it is just a part of the system they use.<p>Linux is the kernel: the program in the system that allocates the machine’s resources to the other programs that you run. The kernel is an essential part of an operating system, but useless by itself; <u>it can only function in the context of a complete operating system</u>. Linux is normally used in combination with the GNU operating system: the whole system is basically GNU with Linux added, or GNU/Linux. <p>All the so-called “Linux” distributions are really distributions of GNU/Linux.</p>"
+      },
+      "enabled": {
+        "title": "Enabled",
+        "type": "boolean",
+        "default": true
+      },
+      "thing": {
+        "title": "Thing",
+        "type": "string",
+        "enum": [
+          "a",
+          "b",
+          "c"
+        ],
+        "enumNames": {
+          "a": "Thing A",
+          "b": "Thing B",
+          "c": "Thing C"
+        },
+        "format": "radios",
+        "default": "b"
+      },
+      "logo": {
+        "title": "Logo",
+        "type": "string",
+        "format": "image"
+      },
+      "container": {
+        "title": "Location",
+        "description": "Where should the app appear on your site?",
+        "type": "object",
+        "format": "element"
+      },
+      "color": {
+        "title": "Color",
+        "type": "string",
+        "format": "color",
+        "default": "#ff7900"
+      },
+      "size": {
+        "title": "Size",
+        "type": "string",
+        "enum": [
+          "small",
+          "medium"
+        ],
+        "enumNames": {
+          "small": "Small",
+          "medium": "Medium"
+        },
+        "default": "small"
+      },
+      "icons": {
+        "title": "Icons",
+        "type": "object",
+        "properties": {
+          "facebook": {
+            "title": "Facebook",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean"
+              },
+              "username": {
+                "title": "Username",
+                "type": "string",
+                "showIf": {
+                  "icons.facebookenabled": true
+                }
+              }
+            }
+          },
+          "twitter": {
+            "title": "Twitter",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": true
+              },
+              "username": {
+                "title": "Username",
+                "type": "string",
+                "showIf": {
+                  "icons.twitterenabled": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "variations": {
+        "title": "Variations",
+        "description": "Specify different texts for each variation.",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "title": "Variation text"
+        }
+      },
+      "items": {
+        "title": "Nav Items",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "title": "Nav Item",
+          "properties": {
+            "itemType": {
+              "order": 1,
+              "title": "Type of nav item",
+              "type": "string",
+              "enum": [
+                "label",
+                "link"
+              ],
+              "enumNames": {
+                "label": "Label",
+                "link": "Link"
+              },
+              "default": "link"
+            },
+            "href": {
+              "order": 2,
+              "showIf": {
+                "items[]itemType": "link"
+              },
+              "title": "Link URL",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "birthdate": {
+        "title": "What is your birthday?",
+        "type": "string",
+        "format": "date",
+        "default": "2015-01-01"
+      },
+      "partyStart": {
+        "title": "When is your next birthday party?",
+        "type": "string",
+        "format": "date-time",
+        "default": "Tue Nov 17 2015 18:00:00 PST"
+      },
+      "partyEnd": {
+        "title": "What time does the party end?",
+        "type": "string",
+        "format": "time",
+        "default": "10:30 AM"
+      },
+      "help": {
+        "type": "help",
+        "helpvalue": "<hr>Learn more about <a href='/developer/docs/install-json'>install.json</a> in the Cloudflare Developer Docs."
+      }
+    }
+  }
+}
